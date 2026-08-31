@@ -1,0 +1,15 @@
+.logoContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logoBox {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    background-color: var(--blue-700);
+}
+
+
