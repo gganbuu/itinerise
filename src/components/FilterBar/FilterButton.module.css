@@ -1,0 +1,12 @@
+.filterButton {
+    border: none;
+    padding: 1.5rem;
+    background-color: transparent;
+    cursor: pointer;
+    /* border-bottom: 2px solid var(--blue-600); */
+}
+
+.filterButton > h3 {
+    font-family: var(--regular-font);
+    font-weight: var(--body-m);
+}

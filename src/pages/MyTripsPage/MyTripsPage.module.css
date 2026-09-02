@@ -1,4 +1,17 @@
-.myTripsBody { 
-    width: clamp(700px, 100%, 1000px);
-    margin: 2rem 5rem;
+.myTripsMain { 
+    display: flex;
+    flex-direction: column;
+    width: clamp(700px, 100%, 1600px);
+    margin: auto;
+    gap: 2rem;
+    padding: 0rem 100px;
+}
+
+.tabCluster, .buttonCluster {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonCluster {
+    gap: 1rem;
 }
