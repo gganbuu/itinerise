@@ -2,5 +2,6 @@
     width: clamp(700px, 100%, 1600px);
     margin: auto;
     text-align: center;
+    gap: 2rem;
 
 }

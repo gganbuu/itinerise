@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './TextInput.module.css'
 
-const TextInput = () => {
+const TextInput = ({placeholder, name}) => {
   return (
-    <input type="text" />
+    <input type="text" name={name} placeholder={placeholder} />
   )
 }
 

@@ -15,11 +15,11 @@ import { useState } from 'react'
 
 
 const MyTripsPage = () => {
-  const [modalState, setModalState] = useState(false)
+  const [modalState, setModalState] = useState(true)
   const toggleModal = () => {
 
     setModalState(!modalState)
-  } 
+  }
 
   return (
     <div className={styles.myTripsContainer}>
@@ -42,10 +42,12 @@ const MyTripsPage = () => {
         </FilterBar>
 
         <TripCardsContainer>
+          <NewTripCard onClick={() => toggleModal()}/>
           <TripCard title="Malaysia: Kuala Lumpur & Penang"
                     startDate="2026-09-24"
                     endDate="2026-10-03"/>
-          <NewTripCard onClick={() => toggleModal()}/>
+
+          
         </TripCardsContainer>
         
         {modalState && (<NewTripModal onClose={toggleModal}/>)}
