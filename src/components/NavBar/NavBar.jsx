@@ -5,10 +5,10 @@ import { Logo } from '../Logo/Logo';
 
 const NavBar = ({children}) => {
   return (
-    <div className={styles.navContainer}>
+    <nav className={styles.navContainer}>
         <Logo/>
         {children}
-    </div>
+    </nav>
   )
 }
 

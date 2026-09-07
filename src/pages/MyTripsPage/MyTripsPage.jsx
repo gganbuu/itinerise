@@ -9,6 +9,7 @@ import TripCardsContainer from '../../components/TripCardsContainer/TripCardsCon
 import TripCard from '../../components/TripCard/TripCard'
 import NewTripCard from '../../components/NewTripCard/NewTripCard'
 import NewTripModal from '../../components/NewTripModal/NewTripModal'
+import FooterBar from '../../components/FooterBar/FooterBar'
 
 import { useState } from 'react'
 
@@ -16,13 +17,13 @@ import { useState } from 'react'
 const MyTripsPage = () => {
   const [modalState, setModalState] = useState(false)
   const toggleModal = () => {
-    console.log("modal hit")
+
     setModalState(!modalState)
   } 
 
   return (
-    <>
-      <header>
+    <div className={styles.myTripsContainer}>
+      <header classname={styles.myTripsHeader}>
         <NavBar/>
       </header>
       <main className={styles.myTripsMain}>
@@ -44,15 +45,13 @@ const MyTripsPage = () => {
           <TripCard title="Malaysia: Kuala Lumpur & Penang"
                     startDate="2026-09-24"
                     endDate="2026-10-03"/>
-          <NewTripCard/>
+          <NewTripCard onClick={() => toggleModal()}/>
         </TripCardsContainer>
         
         {modalState && (<NewTripModal onClose={toggleModal}/>)}
       </main>
-      <footer>
-
-      </footer>
-    </>
+      <FooterBar/>
+    </div>
   )
 }
 

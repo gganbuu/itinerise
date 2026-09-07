@@ -1,8 +1,17 @@
+.myTripsContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
 .myTripsMain { 
     display: flex;
     flex-direction: column;
+
     width: clamp(700px, 100%, 1600px);
-    margin: auto;
+    margin: 0 auto;
+    
     gap: 2rem;
     padding: 0rem 100px;
 }
