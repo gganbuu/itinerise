@@ -72,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
     --body-hvst: 800;
 
     /* blues */
+    --bg-color: #f6f9fd;
     --blue-50: #EBF3FF;
     --blue-100: #DCE8FF;
     --blue-200: #BDD5FF;
@@ -97,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
     --gray-900: #171717;
     --gray-950: #0A0A0A;
   
-    background-color: var(--blue-50)  
+    background-color: var(--bg-color);  
 }
 
 

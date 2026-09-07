@@ -1,0 +1,48 @@
+.tripCard {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid var(--gray-300);
+    width: 350px;
+    background-color: var(--gray-50);
+    overflow: hidden;
+}
+
+.tripRoute {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    padding: 0rem 1rem;
+    background-color: var(--blue-50);
+}
+
+.routeLine {
+    width: 100%;
+    height: auto;
+}
+
+.tripDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem;
+}
+
+.tripTitle {
+    font-size: 16px;
+    font-weight: var(--title-h);
+}
+
+.tripDates {
+    font-size: 13px;
+    font-weight: var(--body-m);
+    color: var(--gray-500);
+}
+
+.tripCountdown {
+    align-self: flex-end;
+    margin-top: 1.5rem;
+    font-size: 12px;
+    font-weight: var(--body-m);
+    color: var(--gray-500);
+}

@@ -3,5 +3,6 @@
     border: none;
     border-radius: 5px;
     color: var(--blue-50);
-    background-color: var(--blue-800)
+    background-color: var(--blue-900);
+    cursor: pointer;
 }

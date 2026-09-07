@@ -31,5 +31,8 @@
     "oxlint": "^1.75.0",
     "vite": "^8.2.0",
     "vitest": "^4.1.11"
+  },
+  "allowScripts": {
+    "vite-plugin-css-auto-import@0.5.0": true
   }
 }

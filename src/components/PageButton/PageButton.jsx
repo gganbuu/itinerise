@@ -2,9 +2,9 @@ import styles from './PageButton.module.css'
 
 import React from 'react'
 
-const PageButton = ({name}) => {
+const PageButton = ({name, onClick}) => {
   return (
-    <button className={styles.pageButton}>
+    <button onClick={onClick} className={styles.pageButton}>
         {name}
     </button>
   )

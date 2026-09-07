@@ -1,0 +1,7 @@
+.tripCardsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0rem 1rem;
+    gap: 1rem;
+}
