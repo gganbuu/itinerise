@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './TripCard.module.css'
 import shapes from '../../assets/Shapes.svg'
+import { Link } from 'react-router'
 
 const dayInMs = 1000 * 60 * 60 * 24
 
@@ -21,25 +22,27 @@ const formatCountdown = (start, end) => {
   return 'completed'
 }
 
-const TripCard = ({title, startDate, endDate}) => {
-  const start = new Date(startDate)
-  const end = new Date(endDate)
+const TripCard = ({trip}) => {
+  const start = new Date(trip.startDate)
+  const end = new Date(trip.endDate)
   const days = daysBetween(start, end) + 1
 
   return (
-    <article className={styles.tripCard}>
-      <div className={styles.tripRoute}>
-        <img src={shapes} alt="" className={styles.routeLine}/>
-      </div>
+    <Link to={`/trip/${trip.id}`} class={styles.linkWrap}>
+      <article className={styles.tripCard}>
+        <div className={styles.tripRoute}>
+          <img src={shapes} alt="" className={styles.routeLine}/>
+        </div>
 
-      <div className={styles.tripDetails}>
-        <h3 className={styles.tripTitle}>{title}</h3>
-        <p className={styles.tripDates}>
-          {formatDay(start)} — {formatDay(end)} • {days} days
-        </p>
-        <p className={styles.tripCountdown}>{formatCountdown(start, end)}</p>
-      </div>
-    </article>
+        <div className={styles.tripDetails}>
+          <h3 className={styles.tripName}>{trip.name}</h3>
+          <p className={styles.tripDates}>
+            {formatDay(start)} — {formatDay(end)} • {days} days
+          </p>
+          <p className={styles.tripCountdown}>{formatCountdown(start, end)}</p>
+        </div>
+      </article>
+    </Link>
   )
 }
 

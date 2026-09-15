@@ -1,8 +1,11 @@
 import React from 'react'
 
-const DateInput = () => {
+const DateInput = ({id, name, required}) => {
   return (
-    <input type="date"/>
+    <input id={id}
+           type="date"
+           name={name}
+           required={required}/>
   )
 }
 

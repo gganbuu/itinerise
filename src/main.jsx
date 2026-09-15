@@ -9,18 +9,22 @@ import '@fontsource-variable/nunito/wght.css';
 
 
 import MyTripsPage from './pages/MyTripsPage/MyTripsPage';
-import TripPage from './pages/TripPage';
+import TripPage from './pages/TripPage/TripPage';
+import { newTripAction } from './pages/MyTripsPage/newTripAction';
+import { tripLoader } from './pages/TripPage/tripLoader';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MyTripsPage/>
+    Component: MyTripsPage,
+    action: newTripAction,
   },
   {
-    path: "/trip",
-    element: <TripPage/>
-  }
-])
+    path: "/trip/:tripId",
+    Component: TripPage,
+    loader: tripLoader,
+  },
+]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

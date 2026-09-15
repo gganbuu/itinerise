@@ -10,8 +10,10 @@
 }
 
 .newTripModal header, main, footer {
-    padding: 1rem;
+    padding: 2rem;
 }
+
+
 
 .newTripContainer {
     margin: 5% auto;
@@ -25,6 +27,11 @@
     justify-content: space-between;
 }
 
+.newTripSubtitle {
+    font-weight: 400;
+
+}
+
 .newTripTitleAndButton button {
     cursor: pointer;
     border: none;
@@ -34,10 +41,12 @@
     border-radius: 50px;
 }
 
+
+
 .newTripMain {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 } 
 
 .modalLabel {

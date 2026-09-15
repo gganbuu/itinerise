@@ -1,5 +1,5 @@
 .navContainer {
-    width: clamp(700px, 100%, 1600px);
+    width: clamp(700px, 100%, 1700px);
     margin: auto;
     display: flex;
     flex-direction: row;

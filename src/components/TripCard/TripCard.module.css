@@ -1,3 +1,7 @@
+.linkWrap {
+    text-decoration: none;
+}
+
 .tripCard {
     display: flex;
     flex-direction: column;
@@ -28,8 +32,8 @@
     padding: 1rem;
 }
 
-.tripTitle {
-    font-size: 16px;
+.tripName {
+    font-size: 1rem;
     font-weight: var(--title-h);
 }
 

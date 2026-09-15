@@ -15,17 +15,18 @@ import { useState } from 'react'
 
 
 const MyTripsPage = () => {
-  const [modalState, setModalState] = useState(true)
+  const [modalState, setModalState] = useState(false)
   const toggleModal = () => {
-
     setModalState(!modalState)
   }
 
+  // temporary trips parser
+  const trips = JSON.parse(localStorage.trips)
+ 
+
   return (
     <div className={styles.myTripsContainer}>
-      <header classname={styles.myTripsHeader}>
-        <NavBar/>
-      </header>
+      <NavBar/>
       <main className={styles.myTripsMain}>
         <h1>My Trips</h1>
         <FilterBar>
@@ -43,11 +44,11 @@ const MyTripsPage = () => {
 
         <TripCardsContainer>
           <NewTripCard onClick={() => toggleModal()}/>
-          <TripCard title="Malaysia: Kuala Lumpur & Penang"
-                    startDate="2026-09-24"
-                    endDate="2026-10-03"/>
-
+          {trips.map(trip => <TripCard trip={trip}/>)}
           
+          {/* <TripCard title="Malaysia: Kuala Lumpur & Penang"
+                    startDate="2026-09-24"
+                    endDate="2026-10-03"/> */}
         </TripCardsContainer>
         
         {modalState && (<NewTripModal onClose={toggleModal}/>)}

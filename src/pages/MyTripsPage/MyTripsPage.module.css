@@ -6,14 +6,14 @@
 
 
 .myTripsMain { 
+    flex: 1;
     display: flex;
     flex-direction: column;
 
-    width: clamp(700px, 100%, 1600px);
+    width: clamp(700px, 100%, 1700px);
     margin: 0 auto;
     
     gap: 2rem;
-    padding: 0rem 100px;
 }
 
 .tabCluster, .buttonCluster {
