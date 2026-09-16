@@ -10,7 +10,9 @@ import TripCard from '../../components/TripCard/TripCard'
 import NewTripCard from '../../components/NewTripCard/NewTripCard'
 import NewTripModal from '../../components/NewTripModal/NewTripModal'
 import FooterBar from '../../components/FooterBar/FooterBar'
+import { Logo } from '../../components/Logo/Logo'
 
+import { Link } from 'react-router'
 import { useState } from 'react'
 
 
@@ -26,7 +28,9 @@ const MyTripsPage = () => {
 
   return (
     <div className={styles.myTripsContainer}>
-      <NavBar/>
+      <NavBar>
+        <Link className={styles.logoLink} to="/"><Logo/></Link>
+      </NavBar>
       <main className={styles.myTripsMain}>
         <h1>My Trips</h1>
         <FilterBar>
@@ -45,10 +49,6 @@ const MyTripsPage = () => {
         <TripCardsContainer>
           <NewTripCard onClick={() => toggleModal()}/>
           {trips.map(trip => <TripCard trip={trip}/>)}
-          
-          {/* <TripCard title="Malaysia: Kuala Lumpur & Penang"
-                    startDate="2026-09-24"
-                    endDate="2026-10-03"/> */}
         </TripCardsContainer>
         
         {modalState && (<NewTripModal onClose={toggleModal}/>)}

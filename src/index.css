@@ -116,3 +116,8 @@ h1 {
     font-size: 42px;
     font-weight: 700;
 }
+
+a {
+  text-decoration: none;
+  color: var(--blue-950)
+}

@@ -55,10 +55,10 @@
     gap: 0.5rem;
 }
 
-.dateLabel {
+.twoColumn {
+    gap: 1rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 .newTripModal footer {

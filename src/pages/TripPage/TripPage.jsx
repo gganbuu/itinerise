@@ -1,16 +1,82 @@
 import React from 'react'
 import { useLoaderData, Link } from 'react-router'
+import styles from './TripPage.module.css';
+import NavBar from '../../components/NavBar/NavBar';
+import { Logo } from '../../components/Logo/Logo';
+import FooterBar from '../../components/FooterBar/FooterBar';
+import PageButton from '../../components/PageButton/PageButton';
+import { useState } from 'react';
+import NewActivityModal from '../../components/NewActivityModal/NewActivityModal';
 
 const TripPage = () => {
   const trip = useLoaderData();
+  const [modalState, setModalState] = useState(false)
+
+  const toggleModal = () => {
+    setModalState(!modalState)
+  }
+  
   return (
-    <div>
-      <Link to="/">Back to My Trips</Link>
-      <h1>{trip.name}</h1>
-      <p>{trip.destination}</p>
-      <p>{trip.startDate} - {trip.endDate}</p>
+    <div className={styles.tripPageWrapper}>
+      <NavBar>
+        <div className={styles.navLinks}>
+          <Link className={styles.logoLink} to="/"><Logo/></Link>
+          <Link>Calendar</Link>
+          <Link>Budget</Link>
+          <Link>Map</Link>
+        </div>
+
+        <div className={styles.profileAndShare}>
+
+        </div>
+      </NavBar>
+
+      <main className={styles.tripPageMain}>
+        
+        <header className={styles.headingAndButton}>
+          <h2>{trip.name}</h2>
+          <button>Week</button>
+        </header>
+
+        <main className={styles.bubblesContainer}>
+
+          <aside className={styles.sideBar}>
+            <PageButton name="New Activity" onClick={toggleModal}/>
+            <div className={styles.container}>
+              <p className={styles.containerSubtitle}>CATEGORIES</p>
+            </div>
+            <div className={styles.container}>
+              <p className={styles.containerSubtitle}>ACTIVTY BANK</p>
+            </div>
+          </aside>
+
+          <aside className={styles.calendarContainer}>
+            {/* <p className={styles.containerSubtitle}>CALENDAR</p> */}
+            <div className={styles.calendarGrid}>
+
+              <div className={styles.calendarColumn}>
+                <div className={styles.calendarDayHeading}>
+                  <p>MON</p>
+                  <h4>24</h4>
+                </div>
+                <div className={styles.timeColumn}>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </main>
+
+      </main>
+
+      {modalState && (<NewActivityModal onClose={toggleModal}/>)}
+
+      <FooterBar/>
     </div>
   )
 }
 
 export default TripPage
+
+        {/* <h1>{trip.name}</h1>
+        <p>{trip.destination}</p>
+        <p>{trip.startDate} - {trip.endDate}</p> */}
